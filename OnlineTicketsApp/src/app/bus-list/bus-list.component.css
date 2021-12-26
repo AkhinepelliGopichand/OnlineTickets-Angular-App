@@ -1,0 +1,24 @@
+table tbody tr .btn{
+ height:25px; 
+padding: 1px;
+}
+table.table{
+    border-radius: 5px;
+}
+.nobus{
+    background-color:rgba(0, 0, 100,0.8);
+    min-height: 100px;
+    text-align: center;
+    margin: 50px auto 0 auto;
+    color:white;
+    vertical-align:middle;
+    padding: 50px;
+    font-size: larger;
+    width: 80%;
+}
+div.main_container{
+    margin: 50px auto 0 auto;
+    background-image: url('https://images.pexels.com/photos/2533092/pexels-photo-2533092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=550&w=940');
+    background-position-x: center;
+    height: 700px;
+}

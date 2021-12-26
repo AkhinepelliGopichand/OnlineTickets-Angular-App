@@ -1,0 +1,32 @@
+form{
+    width: 40%;
+    margin: 50px auto 0 auto;
+    border:2px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    background-image: url('https://image.shutterstock.com/image-photo/credit-card-close-shot-selective-600w-567634105.jpg');
+}
+button:hover{
+    background:green;
+    border: 2px solid green;
+}
+.form-group{
+    margin: 5px;
+}
+label{
+    font-weight: bold;
+    color: black;
+    font-size: 110%;
+}
+.header{
+    width: 80%;
+    margin: 20px auto 0 auto;
+    border: 2px solid black;
+    background:rgba(0, 0, 1, 0.8);
+    color: white;
+    font-size: 120%;
+    font-weight: 500;
+    display: flex;
+    justify-content:space-between;
+    padding: 3px;
+}

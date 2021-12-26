@@ -1,0 +1,87 @@
+<h2>Payment interface</h2>
+<div class="header">
+  <div style="padding: 3px;"> Amount : {{x}}</div>  <div  style="padding: 3px;">TXNID : l{{randomId}}</div>  
+</div>
+
+<div style="margin:20px auto 20px auto; width: 40%;text-align: center;">
+    <h2 style="color: chocolate;"> Select Payment Method</h2>
+  <input type="radio" id="type" name="type" style="margin: 0 5px;" (change)="credit()" checked>
+  <label for="type">Credit/Debit Card</label>
+  <input type="radio" id="types" name="type" style="margin: 0 5px;" (change)="upi()">
+  <label for="types">UPI</label>
+</div>
+
+
+<form [formGroup]="payment" name="payment" *ngIf="card">
+    <div class="form-group">
+      <label for="cardno">Card Number</label>
+      <input type="text" class="form-control" id="cardno" placeholder="Enter Card Number" formControlName="number" maxlength="16">
+
+      <div *ngIf="num.touched && num.invalid">
+          <div *ngIf="num.hasError('required')"  style="color: red;">
+               Card Number is Required
+          </div>
+          <div *ngIf="num.hasError('minlength')"  style="color: red;">
+               Enter 16 didit card number
+          </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cardname">Name on Card</label>
+      <input type="text" class="form-control" id="cardname" placeholder="Enter Name on Card" formControlName="name">
+
+      <div *ngIf="name.touched">
+        <div *ngIf="name.hasError('required')"  style="color: red;">
+             Name on Card is Required
+        </div>
+        <div *ngIf="name.hasError('minlength')"  style="color: red;">
+          Enter min 5 characters
+     </div>
+ </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input type="text" class="form-control" id="cvv" placeholder="CVV" formControlName="cvv" maxlength="3">
+
+      <div *ngIf="cvv.touched && cvv.invalid">
+        <div *ngIf="cvv.hasError('required')"  style="color: red;">
+             CVV is Required
+        </div>
+        <div *ngIf="cvv.hasError('maxlength')"  style="color: red;">
+              3 digits only
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+      <label for="expdt">Expiry Date</label> <br>
+        <select name="month" id="month" style="margin: 3px;">
+          <option [disabled]="true"> Month </option>
+          <option *ngFor="let m of months">{{m.month}}</option>
+        </select>
+        <select name="year" id="year" style="margin: 3px;">
+            <option  [disabled]="true" >Year</option>
+            <option *ngFor="let y of years">{{y.year}}</option>
+        </select>
+    </div>
+    <div class="d-flex justify-content-around">
+    <button type="reset" class="btn btn-danger" >Cancel</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!check()" (click)="end()">Pay now</button>
+</div>
+  </form>
+
+  <form *ngIf="UPI" [formGroup]="payment">
+    <div class="form-group">
+      <label for="">Enter UPI ID :</label> <br>
+      <input type="text" style="width: 100%;" placeholder="xyz@upi" formControlName="upiID" id="upi">
+    <div *ngIf="upiID.touched && upiID.invalid">
+      <div *ngIf="upiID.hasError('required')"  style="color: red;">
+           UPI ID is Required
+      </div>
+      </div>
+      </div>
+    <div class="d-flex justify-content-around">
+      <button type="reset" class="btn btn-danger" >Cancel</button>
+      <button type="submit" class="btn btn-primary" (click)="end()"  [disabled]="upiID.invalid">Pay now</button>
+  </div>
+  </form>

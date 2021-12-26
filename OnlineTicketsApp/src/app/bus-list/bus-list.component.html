@@ -1,0 +1,37 @@
+<div class="main_container">
+<div style="width: 90%; margin: 20px auto 0 auto;" class="tblcontainer" *ngIf="check()">
+<h2 style="text-align: center; margin:0 0 20px 0;">Buses Available</h2>
+    <table class="table table-primary border border-dark table-hover">
+      <thead class="text-danger">
+        <tr>
+          <th scope="col">Travels</th>
+          <th scope="col">Bustype</th>
+          <th scope="col">From</th>
+          <th scope="col">To</th>
+          <th scope="col">Departure</th>
+          <th scope="col">Arrival</th>
+          <th scope="col">Seats</th>
+          <th scope="col">Fare</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bus of buses">
+          <td>{{bus.travels}}</td>
+          <td>{{bus.type}}</td>
+          <td>{{bus.from}}</td>
+          <td>{{bus.to}}</td>
+          <td>{{bus.Departure}}</td>
+          <td>{{bus.Arrival}}</td>
+          <td>{{(bus.seats)-(bus.bookedSeats.length)}}</td>
+          <td>{{bus.fare}}</td>
+          <td> <button type="button" class="btn btn-success m-1 text-white" (click)="goToSeats(bus)"> View Seats</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!check()" class="nobus">
+    Sorry! No Buses are available in this route 
+  </div>
+</div>

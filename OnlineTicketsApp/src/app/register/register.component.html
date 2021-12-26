@@ -1,0 +1,79 @@
+
+<div class="row" style="margin: 20px 0 0 0;">
+    <div class="col-md-6 mx-auto">
+   <div class="card">
+     <div class="card-header">
+         <h2 class="" style="text-align: center;">Create Account</h2>
+     </div>
+     <div class="card-body">
+         <form  [formGroup]="dtls" name="dtls">
+             <div class="form-group">
+                 <label for="">Name</label>
+                 <input type="text" formControlName="name" name="name" class="form-control rounded-0" >
+              
+                 <div *ngIf="name.touched && name.invalid">
+                  <div *ngIf="name.hasError('required')" class="text-danger">
+                    Name is required 
+                  </div>
+               </div>
+             </div>
+             <div class="form-group">
+                 <label for="">Email</label>
+                 <input type="text" formControlName="email" name="email" class="form-control rounded-0" required >
+
+                 <div *ngIf="email.touched && email.invalid">
+                    <div *ngIf="email.hasError('required')" class="text-danger">
+                      Email is required 
+                    </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="">Mobile</label>
+                 <input type="text" formControlName="mobile" class="form-control rounded-0" name="mobile" required >
+
+                 <div *ngIf="mobile.touched && mobile.invalid">
+                    <div *ngIf="mobile.hasError('required')" class="text-danger">
+                      Mobile is required 
+                    </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="">Password</label>
+                 <input type="password" formControlName="password"  name="password" class="form-control rounded-0" required >
+
+                 <div *ngIf="password.touched && password.invalid">
+                    <div *ngIf="password.hasError('required')" class="text-danger">
+                      Password is required 
+                    </div>
+                 </div>
+             </div>
+             <div class="form-group">
+                 <label for="">DOB</label>
+                 <input type="Date" formControlName="DOB" class="form-control rounded-0"  name="DOB"required >
+
+                 <div *ngIf="DOB.touched && DOB.invalid">
+                    <div *ngIf="DOB.hasError('required')" class="text-danger">
+                      DOB is required 
+                    </div>
+                 </div>
+             </div>
+             <div class="form-group mt-2">
+                 Gender <br>
+                <input type="radio" formControlName="gender" id="male" name="gender" value="male"  class="m-2"  name="gender" >
+                <label for="male" >Male</label>
+                <input type="radio" id="female" name="gender" value="female" class="m-2">
+                <label for="female">Female</label><br>
+
+                <div *ngIf="gender.touched && gender.invalid">
+                    <div *ngIf="gender.hasError('required')" class="text-danger">
+                      Gender is required 
+                    </div>
+                 </div>
+             </div>
+             <button (click)="registerUser()" type="button" class="btn btn-success float-end m-2 mx-auto" [disabled]="!dtls.valid">Sign Up</button>
+             <button  type="reset" class="btn btn-danger float-end m-2">Clear</button>
+         </form>
+     </div>
+   </div>
+    </div>
+</div>

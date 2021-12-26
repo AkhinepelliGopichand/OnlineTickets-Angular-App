@@ -1,0 +1,35 @@
+<h2 style="text-align: center;color: green">Payment Succesful</h2>
+<h3 class="blink">!Ticket Confirmed</h3>
+<button type="button" class="btn btn-success float-end" (click)="DownloadPDF()" style="margin:2px 20px 2px 0;">Download Ticket PDF</button>
+<div id="ticketprint">
+    <div style="width: 70%; margin: 20px auto 0 auto;" class="tblcontainer">
+        <h2>Bus Details</h2>
+        <table class="table table-hover table-border bus table-primary" style="width: 70%; margin: 0 auto;">
+          <tbody>
+            <tr><td><b>From</b></td><td>{{bus.from}}</td></tr>
+            <tr><td><b>To</b><td>{{bus.to}}</td></tr>
+            <tr><td><b>Date</b></td><td>{{date}}</td></tr>
+            <tr><td><b>Departure</b></td><td>{{bus.Departure}}</td></tr>
+            <tr><td><b>Arrival</b></td><td>{{bus.Arrival}}</td></tr>
+            <tr><td><b>Bustype</b></td><td>{{bus.type}}</td></tr>
+            <tr><td><b>Amount</b></td><td>{{Amount}}</td></tr>
+          </tbody>
+        </table>
+        <h2 >Passengers Details</h2>
+        <table class="table table-sm table-border table-primary" style="width: 80%; margin: 0 auto;">
+            <thead class="table table-bordered table-hover">
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Seat No</th>
+            </thead>
+          <tbody>
+            <tr *ngFor="let p of passengers">
+              <td>{{p.name}}</td>
+              <td>{{p.gender}}</td>
+              <td>{{p.seatNo}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+<h2 style="text-align: center;color: blue;margin: 30px 0 0 0;">Thank you for choosing us</h2>

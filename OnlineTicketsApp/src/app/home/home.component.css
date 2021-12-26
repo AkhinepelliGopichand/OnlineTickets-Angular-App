@@ -1,0 +1,79 @@
+.source-details,
+.destination-details,
+.departure-details{
+    width: 200px;
+}
+.input-box{
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    margin: 5px 2px;
+    height: 70px;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid black;
+    background: #c2e9fb;
+    width: 180px;
+}
+#from,
+#To,
+#dep{
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 25px;
+    box-shadow: none !important;
+    color: #333;
+    padding: 3px;
+    margin: 0 auto;
+    width: 95%
+}
+.input-box label{
+    margin-bottom: 0px;
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color:black;
+    padding: 0px 4px;
+}
+.Planjrnycntnr{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: 10px auto 0 auto;
+    justify-content: space-around;
+    padding: 105px;
+    border-radius: 5px;
+}
+.srchbtn{
+    margin: 20px 0 0 0;
+}
+
+table tbody tr .btn{
+    height:25px; 
+   padding: 1px;
+   }
+   table.table{
+       border-radius: 5px;
+   }
+   .nobus{
+       background-color:rgba(0, 0, 100,0.9);
+       min-height: 100px;
+       text-align: center;
+       margin: 50px auto 0 auto;
+       color:white;
+       vertical-align:middle;
+       padding: 50px;
+       font-size: larger;
+       width: 80%;
+   }
+   .main_cntr{
+       margin: 0 auto; 
+    background: url('https://images.pexels.com/photos/672358/pexels-photo-672358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=900');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 600px;
+   }

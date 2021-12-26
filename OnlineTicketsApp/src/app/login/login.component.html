@@ -1,0 +1,63 @@
+<div class="main_container">
+    <img src="https://st.depositphotos.com/1912933/3495/i/950/depositphotos_34955259-stock-photo-bus-for-tourists-transportation-and.jpg" >
+    <div>
+        <div  class="loginContainer mx-auto">
+            <div class="header">
+                <h2>Login To Plan Your Journey</h2>
+            </div>
+
+            <div class='login' style="margin: 0;">
+
+                <div class="login_header mx-md-auto">
+                    Login
+                </div>
+                <div class="login_container mx-md-auto">
+
+                    <form [formGroup]="userdtls">
+                        <div class="mail">
+                            <label for="email"><b>Email</b> </label><br>
+                            <input type="email" id="email" formControlName="email" value="userData.email"
+                                name="email">
+                        </div>
+                        <div *ngIf="email.invalid && email.touched">
+                            <div *ngIf="email.hasError('required')" class="text-danger">
+                                Email is Required
+                            </div>
+                            <div *ngIf="email.hasError('minlength')" class="text-danger">
+                                Enter minLength of 3
+                            </div>
+                        </div>
+                        <div class="pwd">
+                            <label for="pwd"> <b>Password</b></label><br>
+                            <input type="password" name="password" formControlName="password" id="pwd"
+                                value="userData.password" name="password">
+                        </div>
+
+                        <div *ngIf="password.invalid && password.touched">
+                            <div *ngIf="password.hasError('required')" class="text-danger">
+                                Password is Required
+                            </div>
+                        </div>
+                        <div class="btns">
+                            <button type="submit" class="btn btn-primary mx-auto signbtn" [disabled]="!userdtls.valid"
+                                (click)="userInfo()">Sign in</button>
+                            <button type="button" class="btn btn-danger regbtn" (click)="regclicked()">
+                                Register</button>
+                        </div>
+                    </form>
+                    <div style="color: red;">
+                        <div style=" text-align: center;">
+                            {{error}}
+                        </div>
+
+                        <div *ngIf="errors" style=" padding: 2px; text-align: center;">
+                            {{errors.error}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

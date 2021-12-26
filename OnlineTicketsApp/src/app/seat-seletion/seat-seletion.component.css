@@ -1,0 +1,89 @@
+
+
+.main_cntr{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bill{
+    border:2px solid black;
+    width: 30%;
+    padding: 20px;
+}
+.green{
+    background-color: green; 
+}
+.gray{
+   background-color: gray;
+}
+.red{
+   background-color: red;
+}
+.seats .seat{
+border:1px solid black; 
+flex-basis: 10%;
+height: 80%;
+}
+.gree{
+    color:green;
+}
+.seats{
+    justify-content:space-between;  
+    width: 60%;
+    border: 2px solid black;
+    align-items: center;
+    background-color: white;
+    display: flex;flex-direction:row; flex-wrap: wrap;padding: 2px;text-align: center;
+
+
+}
+span{
+    margin: 0 5px 0 0;
+    font-weight: bolder;
+}
+.bill table tr td{
+    padding: 5px;
+    /* border: 1px solid black; */
+    margin-right: 10px; 
+    background-color: white;
+}
+.bill table{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.seats ul{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 400px;
+    width: 620px;
+    box-sizing: border-box;
+}
+.seats ul li{
+ /* border: 1px solid black;  */
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 2px 0 0;
+height: 30%;
+width:10%;
+}
+span.material-icons.initial{
+  font-size: 250%;
+  cursor:default;
+}
+.material-icons.disabled{
+    color: red;
+    font-size: 150%;
+}
+.material-icons.selected{
+    color:green;
+}
+span.material-icons .mat-raised-button{
+    font-size: 200%;
+}

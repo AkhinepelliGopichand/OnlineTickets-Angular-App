@@ -1,0 +1,80 @@
+<html>
+
+<body>
+    <h2 style="text-align: center;">Select seats</h2>
+    <div style="width:20px;  height: 20px;; border: 1px solid black; background:black   ; display: inline-block; margin:0 0 0px 230px;">
+    </div> <span> Available</span>
+    <div style="width:20px;  height: 20px;; border: 1px solid black; background:red; display: inline-block;"></div>
+    <span> Not Available</span>
+    <div style="width:20px;  height: 20px;; border: 1px solid black; background:green; display: inline-block;"></div>
+    <span> Selected </span>
+<div style="display: flex;justify-content: space-around;width: 50%; margin: 10px 30px 10px 30px;">
+   <div><b>Total Seats:{{TotalSeats}}</b></div>
+    <div><b>Booked:{{Booked}}</b></div>
+    <div><b>Available:{{Available}}</b></div>
+</div>
+
+
+    <div class="main_cntr">
+        <div class="seats">
+            <ul>
+                <li *ngFor="let item of seats" (click)="selectedSeats(item)">
+                    <span class="material-icons initial"
+                        [ngClass]={disabled:buss.bookedSeats.includes(item.seatNo),selected:(!buss.bookedSeats.includes(item.seatNo)&&item.selected)}
+                        placement="top" ngbTooltip="Seat: {{item.seatNo}} | Fare: {{buss.fare}}"> airline_seat_recline_normal</span>
+                </li>
+            </ul>
+
+        </div>
+        <div class="bill">
+            <div>
+                <h2 style="text-align: center;">Ticket Details</h2>
+                <table style="align-items:center;">
+                    <tr>
+                        <td>From</td>
+                        <td>: {{from}}</td>
+                    </tr>
+                    <tr>
+                        <td>To </td>
+                        <td>: {{to}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date </td>
+                        <td>: {{dat}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fare</td>
+                        <td><b>: {{amount()}}</b></td>
+                    </tr>
+                    <tr>
+                        <td>Service Tax</td>
+                        <td><b>: {{Tax}}</b></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td><b>: {{Total}}</b></td>
+                    </tr>
+                    <tr>
+                        <td>Seat No</td>
+                        <td>: <span *ngFor="let s of seat">{{s+','}}</span></td>
+                    </tr>
+                </table>
+
+                <form *ngFor="let s of seat">
+                    <div>
+                        <input type="text" placeholder="Name of the Passenger" style="margin:1px; border-radius: 5px;"
+                            #name>
+                        <input type="radio" name="gender" #gender value="male"
+                            (change)=details(name.value,gender.value)>Male <input type="radio" name="gender" #gender2
+                            value="female" (change)=details(name.value,gender2.value)> Female
+                    </div>
+                </form>
+
+                <button type="button submit" class="btn btn-success float-end" (click)="paymentLink()" [disabled]="Total==0">Payment</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
