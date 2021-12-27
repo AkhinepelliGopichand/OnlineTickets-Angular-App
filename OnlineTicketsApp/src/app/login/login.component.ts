@@ -48,8 +48,10 @@ errors:any
           this.error=res
         },
         err=>{ 
-        console.log("Error is",err)
-        this.errors=err
+        console.log("Error is",err.name)
+        if(err.name==='HttpErrorResponse'){
+          this.errors='We are unable to Process your request. Please try later'
+        }
         }
       )
       
